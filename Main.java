@@ -4,21 +4,26 @@ class Main {
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
 
-    System.out.println("How musicians are in your group?");
-    int memb = scan.nextInt();
-    int newOrder = members(memb);
-    System.out.println("Please divide your group into " + newOrder + " in each row");
+    System.out.println("Hello, what is your name?");
+    String name = scan.next();
+    System.out.println("Do you like books " + name);
+    scan.next();
+    System.out.println("How many pages does this book have?");
+    int pages = scan.nextInt();
+    int pageOrder = pages();
+
   }
 
-  //Members method
-  public static int members(int memb)
+  //Pages method
+  public static int pages(int page)
   {
-    if(memb > 0)
+    if(page == 0)
     {
-      System.out.println(memb--);
-      return memb - members(memb - 1);
+      System.out.println("This is not enough pages");
     }else{ 
-      return 0;
+      System.out.println(page);
+      return page - pages(page - 1);
     }
+    return page;
   }
 }
