@@ -10,15 +10,15 @@ class Main {
     System.out.println("Please divide your group into " + newOrder + " in each row");
   }
 
-  //
+  //Members method
   public static int members(int memb)
   {
-    if(memb == 2)
+    if(memb > 0)
     {
-       return 0;
-       
+      System.out.println(memb--);
+      return memb - members(memb - 1);
     }else{ 
-     return memb % members(memb - 1);
+      return 0;
     }
   }
 }
