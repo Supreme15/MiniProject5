@@ -9,8 +9,9 @@ class Main {
     System.out.println("Do you like books " + name);
     scan.next();
     System.out.println("How many pages does this book have?");
-    int pages = scan.nextInt();
-    int pageOrder = pages();
+    int page = scan.nextInt();
+    int pageOrder = pages(page);
+    System.out.println("You should read " + pageOrder + " per day for 30 days!");
 
   }
 
@@ -19,10 +20,9 @@ class Main {
   {
     if(page == 0)
     {
-      System.out.println("This is not enough pages");
+      System.out.println("Alright");
     }else{ 
-      System.out.println(page);
-      return page - pages(page - 1);
+      return page - pages(page -1);
     }
     return page;
   }
